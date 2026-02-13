@@ -52,10 +52,20 @@ copy .env.example .env
 Pastikan file .env memiliki konfigurasi berikut:
 
 APP_NAME=OMDbApp
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
 APP_URL=http://localhost:8000
+
+OMDB_API_KEY=f0a3ce41
+OMDB_BASE_URL=http://www.omdbapi.com/
+# SESSION_DRIVER=file
+# SESSION_LIFETIME=120
+
+
+APP_ENV=local
+APP_KEY=base64:CAXJoynsHnOgdBkhGP+8y4yJhOc7eqrp4xr89EKFcGQ=
+APP_DEBUG=true
+# APP_URL=http://localhost
+
+LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -64,23 +74,35 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 
-OMDB_API_KEY=YOUR_API_KEY
-OMDB_BASE_URL=https://www.omdbapi.com/
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
 
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
-Ganti YOUR_API_KEY dengan API key milik kamu.
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
 
-🔑 Cara Mendapatkan OMDb API Key
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
 
-Buka https://www.omdbapi.com/apikey.aspx
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
 
-Pilih paket FREE
-
-Masukkan email aktif
-
-Aktivasi melalui email
-
-Gunakan API key yang diberikan
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 5. Generate Application Key
 php artisan key:generate
